@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "Lykke.Common": "1.1.9",
+    "Lykke.EmailSender": "1.0.3",
+    "Lykke.Integration.AzureQueueAndBlobs": "1.0.3",
+    "Microsoft.NETCore.App": "1.1.0"
+  },
+
+  "frameworks": {
+    "netcoreapp1.1": {
+      "imports": [ "dnxcore50", "portable-net45+win8" ]
+    }
+  }
+}

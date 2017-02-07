@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Linq;
 using Common;
-using Lykke.EmailSender;
 
-namespace EmailSender.AzureQueueAndBlob.Publisher
+namespace Lykke.EmailSender.AzureQueueAndBlob.Publisher
 {
     public class EmailSenderViaQueueContract
     {

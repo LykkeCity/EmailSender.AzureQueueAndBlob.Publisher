@@ -11,9 +11,10 @@ namespace Lykke.EmailSender.AzureQueueAndBlob.Publisher
         public static EmailSenderViaQueue UseEmailSenderViaAzureQueueAndBlobPublisher(this IServiceCollection serviceCollection, 
             AzureQueueAndBlobIntegrationSettings settings, ILog log)
         {
-            var appName = "";
+            var applicationName =
+                 Microsoft.Extensions.PlatformAbstractions.PlatformServices.Default.Application.ApplicationName;
 
-            var publisher = new AzureQueuePublisher<EmailModel>(appName, settings)
+            var publisher = new AzureQueuePublisher<EmailModel>(applicationName, settings)
                 .SetLogger(log)
                 .SetSerializer(new EmailSenderViaAzureQueueAndBlobSerializer())
                 .Start();

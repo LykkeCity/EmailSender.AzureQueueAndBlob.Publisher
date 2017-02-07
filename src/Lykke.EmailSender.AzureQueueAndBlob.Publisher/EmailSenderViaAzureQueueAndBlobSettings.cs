@@ -1,6 +1,5 @@
 ﻿using Common;
 using Common.Log;
-using EmailSender.AzureQueueAndBlob.Publisher;
 using Lykke.Integration.AzureQueueAndBlobs;
 using Lykke.Integration.AzureQueueAndBlobs.Publisher;
 using Microsoft.Extensions.DependencyInjection;

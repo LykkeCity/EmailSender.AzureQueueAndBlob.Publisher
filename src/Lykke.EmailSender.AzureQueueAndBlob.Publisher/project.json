@@ -2,9 +2,9 @@
   "version": "1.0.0-*",
 
   "dependencies": {
-    "Lykke.Common": "1.1.9",
+    "Lykke.Common": "1.1.15",
     "Lykke.EmailSender": "1.0.3",
-    "Lykke.Integration.AzureQueueAndBlobs": "1.0.3",
+    "Lykke.Integration.AzureQueueAndBlobs": "1.0.5",
     "Microsoft.NETCore.App": "1.1.0"
   },
 

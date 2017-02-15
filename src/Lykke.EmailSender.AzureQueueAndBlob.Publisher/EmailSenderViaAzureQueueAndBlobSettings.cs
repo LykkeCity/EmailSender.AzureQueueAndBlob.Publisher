@@ -1,7 +1,9 @@
-﻿using Common;
+﻿using System.Text;
+using Common;
 using Common.Log;
 using Lykke.Integration.AzureQueueAndBlobs;
 using Lykke.Integration.AzureQueueAndBlobs.Publisher;
+using Lykke.Integration.AzureQueueAndBlobs.Subscriber;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Lykke.EmailSender.AzureQueueAndBlob.Publisher
@@ -14,7 +16,7 @@ namespace Lykke.EmailSender.AzureQueueAndBlob.Publisher
             var applicationName =
                  Microsoft.Extensions.PlatformAbstractions.PlatformServices.Default.Application.ApplicationName;
 
-            var publisher = new AzureQueuePublisher<EmailModel>(applicationName, settings)
+            var publisher = new AzureQueueAndBlobPublisher<EmailModel>(applicationName, settings)
                 .SetLogger(log)
                 .SetSerializer(new EmailSenderViaAzureQueueAndBlobSerializer())
                 .Start();
@@ -28,11 +30,5 @@ namespace Lykke.EmailSender.AzureQueueAndBlob.Publisher
     }
 
 
-    public class EmailSenderViaAzureQueueAndBlobSerializer : IAzureQueueSerializer<EmailModel>
-    {
-        public byte[] Serialize(EmailModel model)
-        {
-            return model.ToContract().ToJson().ToUtf8Bytes();
-        }
-    }
+
 }
